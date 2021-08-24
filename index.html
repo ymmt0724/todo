@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang='ja'>
+    
+<head>
+    <meta charset = "UTF-8">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>脳に汗をかくプログラム体験</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+//ブラウザ上に表示される部分のHTMLはbodyタグ内のここに記述してください。
+
+
+<div id="app" class="container">
+    <ul class="list-unstyled">
+      <li v-for="(todo,index) in todos">
+        <label>
+          <span v-bind:class="{'done': todo.done}">{{todo.text}}</span>
+          <button v-on:click="delTodo(index)">削除</button>
+        </label>
+      </li>
+    </ul>
+    <p>
+      <input type="text" v-model="todoText"/>
+      <button v-on:click="addTodo()" class="btn btn-primary btn-sm">追加</button>
+    </p>
+  </div>
+
+
+
+<script src="../js/index.js"></script>
+</body>
+
+</html>
